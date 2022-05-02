@@ -59,7 +59,7 @@ function draw() {
   // Text that makes CTK type in the background
   fill('white');
   noStroke();
-  textSize(300);
+  textSize(50);
   textAlign(CENTER);
   textFont(font);
   text("FLY!!!", width / 2, height / 2);
