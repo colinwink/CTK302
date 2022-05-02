@@ -1,5 +1,5 @@
 let alpha = 0, beta = 0 , gamma = 0; // gyroscope variablers
-let bunnyImage;
+let stick;
 let xPosition = 0;
 let yPosition = 0;
 let x = 0, y = 0, z = 0 ; // accelerometer data
@@ -11,9 +11,11 @@ function setup() {
 
 
 
-  bunnyImage = loadImage("assets/bunny.jpg");
+  stick = loadImage("assets/stick.png");
   imageMode(CENTER);
   rectMode(CENTER);
+
+  font = loadFont('assets/SourceSansPro-Light.ttf');
 
 }
 
@@ -33,33 +35,34 @@ function draw() {
 
   rotate(radians(alpha)); // rotate the bunny depending on the alpha intake
 
-  image(bunnyImage, 0, 0, 500, 500);
+  image(stick, 0, 0, 500, 500);
   // rect(0, 0, 100, 100) ;
   pop();
 
 
   // Text commands that display debugging data
-  textAlign(LEFT);
-  textSize(20);
-  fill('black');
-  text("orientation data:", 25, 25);
-  textSize(15);
-  text("alpha: " + alpha, 25, 50);
-  text("beta: " + beta, 25, 70);
-  text("gamma: " + gamma, 25, 90);
-  textSize(20);
-  text("acceleration data:", 25, 125);
-  textSize(15);
-  text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y.toFixed(2), 25, 170);
-  text("z = " + z.toFixed(4), 25, 190);
+  // textAlign(LEFT);
+  // textSize(20);
+  // fill('black');
+  // text("orientation data:", 25, 25);
+  // textSize(15);
+  // text("alpha: " + alpha, 25, 50);
+  // text("beta: " + beta, 25, 70);
+  // text("gamma: " + gamma, 25, 90);
+  // textSize(20);
+  // text("acceleration data:", 25, 125);
+  // textSize(15);
+  // text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
+  // text("y = " + y.toFixed(2), 25, 170);
+  // text("z = " + z.toFixed(4), 25, 190);
 
   // Text that makes CTK type in the background
   fill('white');
   noStroke();
   textSize(300);
   textAlign(CENTER);
-  text("ctk", width / 2, height / 2);
+  textFont(font);
+  text("FLY!!!", width / 2, height / 2);
 
 }
 
